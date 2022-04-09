@@ -3,48 +3,53 @@ var recognition=new SpeechRecognition();
 
 function start()
 {
-    document.getElementById("textbox").innerHTML="";
     recognition.start();
 
 }
 recognition.onresult=function(event){
     console.log(event);
     var Content=event.results[0][0].transcript;
-    document.getElementById("textbox").innerHTML=Content;
     console.log(Content);
-    if(Content =="take my selfie")
+    if(Content =="selfie")
     {
         speak();
     }
     
 }
+function speak()
+{
+    var synth = window.speechSynthesis;
+    Webcam.attach(camera);
 
-setTimeout(function()
+    setTimeout(function()
 {
     img_id = "selfie1";
-    take_snapshot();
     speak_data = "Taking your next selfie in 3 seconds";
     var utterThis = new SpeechSynthesisUtterance(speak_data);
-    Synth.speak(utterThis);
+    synth.speak(utterThis);
+    take_snapshot();
 } , 3000);
 
 setTimeout(function()
 {
     img_id = "selfie2";
-    take_snapshot();
     speak_data = "Taking your next selfie in 5 seconds";
     var utterThis = new SpeechSynthesisUtterance(speak_data);
-    Synth.speak(utterThis);
+    synth.speak(utterThis);
+    take_snapshot();
 } , 5000);
 
 setTimeout(function()
 {
     img_id = "selfie3";
-    take_snapshot();
     speak_data = "Taking your next selfie in 8 seconds";
     var utterThis = new SpeechSynthesisUtterance(speak_data);
-    Synth.speak(utterThis);
+    synth.speak(utterThis);
+    take_snapshot();
 } , 8000);
+}
+
+
 
 Webcam.set({
     width:360,

@@ -1,33 +1,47 @@
-.h1 
+body
 {
-    font-family: serif;
+    background: #cfcece;
+}
+h1{
+    font-family: cursive;
     font-style: italic;
     font-weight: bold;
 }
 
-#camera
+h4
 {
-    width:360px;
-    height: 250px;
-    border:1px solid grey;
+    color:red;
 }
 
-.copy_right_footer
+#camera
 {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+    width: 500px;
+    height: 400px;
+    border:1px solid rgb(87, 2, 2);
+}
+
+img
+{
+    width: 37%;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 6px 8px 0 rgba(2, 2, 2, 0.2);
 }
 
 .column
 {
-    width: 300px;
-    height: 200px;
-
+    display: inline;
+    padding: 10px;
 }
-
-#textbox
-{
-    width: 300px;
+img:hover{
+    border-radius: 140px;
 }
+.copy_right_footer {
+    position: fixed;
+    color: #6c757d;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    line-height: 3;
+    text-align: center;
+ }
